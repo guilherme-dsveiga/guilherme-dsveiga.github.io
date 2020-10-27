@@ -1,0 +1,161 @@
+/* resetando os valores da pagina e setando variaveis de cor */
+*{
+	margin: 0;
+	padding: 0;
+	--primary-color: #495d9c;
+	--secondary-color: #e3e3e3;
+}
+
+body{
+	background-color: var(--secondary-color);
+	font-family: 'Poppins', sans-serif;
+}
+
+.content{
+	margin-left:  15px;
+}
+
+.imgs{
+	height: 36px;
+	width: 36px;
+}
+
+nav{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 8vh;
+	background-color: var(--primary-color);
+	font-family: 'Poppins', sans-serif;
+}
+
+body::-webkit-scrollbar{
+	width: 5px;
+}
+
+body::-webkit-scrollbar-thumb{
+	background-color: var(--primary-color);
+}
+
+body::-webkit-scrollbar-track{
+	background-color: var(--secondary-color);
+}
+
+.logo a{
+    text-decoration: none;
+    font-weight: bold;
+	color: #000000;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-size: 28px;
+}
+
+.nav-links{
+	display: flex;
+	justify-content: space-around;
+	width: 40%;
+	height: 8vh;
+}
+
+.nav-links li{
+	align-self: center;
+	text-align: center;
+	list-style: none;
+}
+
+
+.nav-links a{
+	color: var(--secondary-color);
+	text-decoration: none;
+	letter-spacing: 3px;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.menu{
+	display: none;
+}
+
+.menu div{
+	width: 25px;
+	height: 3px;
+	background-color: #000000;
+	margin: 5px;
+	transition: all 0.3s ease;
+}
+
+/* resetando o espaço entre os itens quando chegar a 1024px */
+@media screen and (max-width:1024px){
+	.nav-links{
+		display: flex;
+		justify-content: space-around;
+		width: 50%;
+		height: 100%;
+	}
+}
+
+/* entrando em modo mobile */
+@media screen and (max-width:768px){
+	body{
+		overflow-x: hidden;
+	}
+
+	.logo{
+		padding-right: 29.8%;
+	}
+
+	.nav-links{
+		position: absolute;
+		right: 0px;
+		height: 92vh;
+		top: 8vh;
+		background-color: var(--primary-color);
+		display:flex;
+		flex-direction: column;
+		align-items: center;
+		width: 25%;
+		transform: translateX(100%);
+	}
+
+	.nav-links li{
+		opacity: 0;
+	}
+
+	.menu{
+		display: block;
+		cursor: pointer;
+	}	
+}
+
+.nav-active{
+		transform: translateX(0%);
+		transition: transform 0.5s ease-in;
+	}
+
+.body-overflow{
+	overflow-y: hidden;
+}
+
+/* keyframe de animacao dos itens do menu mobile */
+@keyframes navLinkFade{
+	from{
+		opacity: 0;
+		transform: translateX(50px);
+	} to {
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+
+/* animacao do "hamburguer" do menu para um "X" */
+.toggle .line1{
+	transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.toggle .line2{
+	opacity: 0;
+}
+
+.toggle .line3{
+	transform: rotate(45deg) translate(-5px,-6px);
+}
