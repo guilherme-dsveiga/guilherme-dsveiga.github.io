@@ -4,22 +4,126 @@
 	padding: 0;
 	--primary-color: #495d9c;
 	--secondary-color: #e3e3e3;
+	--hover-color: #263152;
 }
 
 body{
 	background-color: var(--secondary-color);
 	font-family: 'Poppins', sans-serif;
 }
-
+.content div{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 .content{
-	margin-left:  15px;
+	margin:  20px;
+	display: grid;
+	grid-template-areas: 
+	'profile resumo resumo resumo'
+	'objetivos objetivos experi experi'
+	'habili habili contato contato';
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
 }
 
+.resumo{
+	grid-area: resumo;
+	margin-left: 10px;
+	max-height: 300px;
+	border-style: solid;
+	border-color: var(--primary-color);
+	border-width: 5px;
+	padding: 20px;
+}
+h2	{
+    font-weight: bold;
+	color: #000000;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 20px;
+}
+.profile-foto{
+	grid-area: profile;
+	height: 300px;
+	width: 300px;
+	border-style: solid;
+	border-color: var(--primary-color);
+	border-width: 5px;
+}
+.profile-foto img{
+	height: 100%;
+	width: 100%;
+}
+.objetivo{
+	grid-area: objetivos;
+	border-style: solid;
+	border-color: var(--primary-color);
+	border-width: 5px;
+	padding: 20px;
+}
+
+.experiencias{
+	grid-area: experi;
+	border-style: solid;
+	border-color: var(--primary-color);
+	border-width: 5px;
+	padding: 20px;
+}
+.habilidades{
+	grid-area: habili;
+	border-style: solid;
+	border-color: var(--primary-color);
+	border-width: 5px;
+	padding: 20px 20px 20px;
+}
+.contato{
+	grid-area: contato;
+	margin-left: 10px;
+	max-height: 300px;
+	border-style: solid;
+	border-color: var(--primary-color);
+	border-width: 5px;
+	padding: 20px 20px 20px;
+}
 .imgs{
 	height: 36px;
 	width: 36px;
 }
-
+.lista-habilidades{
+ 	margin-bottom: 25px;
+	margin-top: 22px;
+	width: 100%;
+}
+.lista-habilidades ul{
+	margin-top: 10px;
+}
+.lista-habilidades li:hover{
+	background-color: var(--hover-color);
+	transition: 0.5s;
+}
+.spacing{
+	grid-column: 1/5;
+	height: 8vh;
+}
+.esquerda{
+	display: inline-block;
+	margin-bottom: 25px;
+	min-width: 46.8%;
+	max-width: 215px;
+}
+.direita{
+	margin-left: 20px;
+	min-width: 46.8%;
+  	display: inline-block;
+}
+.lista-habilidades li{
+  list-style-type: none;
+  font-weight: bold;
+  font-size: 12pt;
+  background-color: var(--primary-color);
+  padding: 12px 60px 12px 30px;
+  margin-left: 0px;
+  margin-bottom: 20px;
+}
 nav{
 	display: flex;
 	justify-content: space-around;
@@ -27,6 +131,7 @@ nav{
 	min-height: 8vh;
 	background-color: var(--primary-color);
 	font-family: 'Poppins', sans-serif;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 body::-webkit-scrollbar{
@@ -124,7 +229,35 @@ body::-webkit-scrollbar-track{
 	.menu{
 		display: block;
 		cursor: pointer;
-	}	
+	}
+	
+	nav{
+		padding-left: 20px;
+	}
+
+	.content{
+		display: grid;
+		grid-template: repeat(6,1fr) / auto;
+	}
+	.profile-foto{
+		grid-row: 1 / 2;
+		align-self: center;
+	}
+	.resumo{
+		grid-row: 2 / 3;
+	}
+	.objetivo{
+		grid-row: 3 / 4;
+	}
+	.experiencias{
+		grid-row: 4 / 5;
+	}
+	.habilidades{
+		grid-row: 5 / 6;
+	}
+	.contato{
+		grid-row: 6 / 7;
+	}
 }
 
 .nav-active{
